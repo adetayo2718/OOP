@@ -249,3 +249,369 @@ GOOD LUCK 😀
 // }
 
 // const bmw = new CarNew('BMW', 120);
+
+// CONSTRUCTOR fUNCTION
+
+// const Person = function (firstName, lastName, yearOfBirth) {
+//   (this.firstName = firstName),
+//     (this.lastName = lastName),
+//     (this.yearOfBirth = yearOfBirth);
+//   this.age = this.calcAge();
+// };
+
+// Person.prototype.calcAge = function () {
+//   return 2023 - this.yearOfBirth;
+// };
+
+// const john = new Person('John', 'Fayose', 1993);
+
+// john.age = john.calcAge();
+// console.log(john);
+// console.log(john.hasOwnProperty('age'));
+
+// //CLASS OBJECT
+
+// class PersonCF {
+//   constructor(fullname, yearOfBirth) {
+//     this.fullname = fullname;
+//     this.yearOfBirth = yearOfBirth;
+//     this.age = this.calcAge();
+//   }
+
+//   calcAge() {
+//     return 2023 - this.yearOfBirth;
+//   }
+// }
+
+// const charley = new PersonCF('Charley Wade', 1997);
+
+// console.log(charley);
+// charley.age = charley.calcAge();
+
+// class PersonCl {
+//   constructor(fullName, birthYear) {
+//     this.fullName = fullName;
+//     this.birthYear = birthYear;
+//   }
+
+//   //Instance methods
+//   get age() {
+//     return 2023 - this.birthYear;
+//   }
+//   calcAge() {
+//     return 2023 - this.birthYear;
+//   }
+//   greet() {
+//     console.log(`Hello ${this.firstName}, your age is: ${this.age}`);
+//   }
+
+//   //Setters and getters
+//   set fullName(name) {
+//     console.log(name);
+//     if (name.includes(' ')) this._fullName = name;
+//     else alert(`${name} is not a full name.`);
+//   }
+
+//   get fullName() {
+//     return this._fullName;
+//   }
+
+//   //Static Method
+//   static hey() {
+//     console.log('Hey, Hello.');
+//   }
+// }
+
+// const john = new PersonCl('john obina', 1986);
+// console.log(john.fullName);
+
+// const ty = new PersonCl('tayo Adebowale', 1990);
+
+// //OBJECT.CREATE
+
+// const PersonOBProto = {
+//   calcAge() {
+//     return 2023 - this.yearOfBirth;
+//   },
+
+//   init(firstName, yearOfBirth) {
+//     (this.firstName = firstName),
+//       (this.yearOfBirth = yearOfBirth),
+//       (this.age = this.calcAge());
+//   },
+// };
+
+// const mary = Object.create(PersonOBProto);
+// mary.init('Mary', 1995);
+// console.log(mary);
+
+// const Car = function (brand, color) {};
+// const bm = new Car();
+
+// class CarC {
+//   constructor(brand, color) {}
+// }
+
+// const mercedes = new CarC();
+
+// const CarObPrototype = {
+//   calcSpeed() {},
+
+//   init() {},
+// };
+
+// const audi = Object.create(CarObPrototype);
+
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
+
+// Person.prototype.calcAge = function () {
+//   return 2023 - this.birthYear;
+// };
+
+// const segun = new Person('segun oni', 1987);
+
+// const Student = function (firstName, birthYear, course) {
+//   Person.call(this, firstName, birthYear);
+//   this.course = course;
+// };
+
+// Student.prototype = Object.create(Person.prototype);
+
+// Student.prototype.introduce = function () {
+//   console.log(`i am ${this.firstName} and i study ${this.course}`);
+// };
+
+// const mike = new Student('Mike Otesile', 1999, 'Accounting');
+
+// Student.prototype.constructor = Student;
+
+// const Year = function (firstName, birthYear, course, year) {
+//   Student.call(this, firstName, birthYear, course);
+//   this.year = year;
+// };
+
+// Year.prototype = Object.create(Student.prototype);
+
+// Year.prototype.info = function () {
+//   console.log(`My name is ${this.firstName} and i am in year ${this.year}`);
+// };
+
+// const shola = new Year('Shola', 1992, 'Computer Science', 4);
+
+// Year.prototype.constructor = Year;
+
+// console.dir(shola.__proto__);
+// console.dir(mike.__proto__);
+// console.dir(segun.__proto__);
+
+// console.log(shola.info());
+// console.log(shola.introduce());
+// console.log(shola.calcAge());
+
+// class Account {
+//   // 1) Public Filed (instances)
+//   locale = navigator.language;
+//   // 2) Private Filed
+//   #movements = [];
+
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.pin = pin;
+
+//     console.log(`Thank you for opening an account with us ${this.owner}`);
+//   }
+//   deposit(val) {
+//     this.#movements.push(val);
+//   }
+//   withdraw(val) {
+//     this.deposit(-val);
+//   }
+//   loanApproved(val) {
+//     return true;
+//   }
+//   loanRequest(val) {
+//     if (this.loanApproved) {
+//       this.deposit(val);
+//       console.log(`${val} has been Approved for ${this.owner}`);
+//     }
+//   }
+// }
+
+// const act1 = new Account('Jonas', 'EUR', 1111);
+// const act2 = new Account('Sara', 'EUR', 1111);
+
+// act1.deposit(300);
+// act1.deposit(-90);
+// act1.loanRequest(1000);
+// console.log(act1);
+
+// //OOP.
+
+// //Abstraction, Encapsulation, Inheritance,
+
+// //constructor Fuctions, ES6 Class, ,Object.create.
+
+// const Person = function (firstname, birthyear) {
+//   this.firstname = firstname;
+//   this.birthyear = birthyear;
+// };
+
+// Person.prototype.calcAge = function () {
+//   return 2023 - this.birthyear;
+// };
+
+// const john = new Person('John', 1932);
+// console.log(john);
+// let sum = 0;
+
+// class Person2 {
+//   constructor(lastname, year) {
+//     this.lastname = lastname;
+//     this.year = year;
+//   }
+
+//   calcAge() {
+//     return 2023 - this.year;
+//   }
+//   birthdays() {
+//     sum++;
+//     const age = this.calcAge() + sum;
+//     return age;
+//   }
+// }
+
+// const ty = new Person2('Adetayo', 1986);
+// console.log(ty);
+// const year1 = ty.birthdays();
+// const year2 = ty.birthdays();
+// const year3 = ty.birthdays();
+
+// const Person3 = {
+//   calcAge() {
+//     2023 - this.birthyear;
+//   },
+//   init(name, year) {
+//     (this.name = name), (this.year = year);
+//   },
+// };
+
+// const bose = Object.create(Person3);
+// bose.init('Abosede', 1993);
+// console.dir(bose);
+
+// document.querySelector('body').addEventListener('click', e => {
+//   console.log(navigator.geolocation);
+// });
+
+// const People = function (group, year) {
+//   this.group = group;
+//   this.year = year;
+// };
+
+// People.prototype.years = function () {
+//   console.log(this);
+//   console.log(this.year);
+//   return 2023 - this.year;
+// };
+
+// const groupA = new People('Adasofunjo', 1990);
+
+// console.log(groupA.years());
+
+// console.log(groupA);
+
+// const page = {
+//   showRoom: function (name) {
+//     console.log(`Hello ${name}, You have clicked on the page body`);
+//   },
+// };
+
+// document.querySelector('body').addEventListener('click', function () {
+//   console.log(this);
+// });
+
+// //Prototypal Inheritance.
+
+// const arr = [1, 3, 9, 6, 3, 9, 6, 3];
+// console.log(arr);
+// // console.dir(arr.__proto__);
+
+// Array.prototype.unique = function unique() {
+//   console.log(this);
+//   return [...new Set(this)];
+// };
+
+// console.log(arr.__proto__);
+// console.log(arr.unique());
+
+// h1 = document.querySelectorAll('h1');
+// var h1;
+// console.dir(h1);
+
+// const arr1 = Array.from(h1);
+// console.log(arr1);
+
+//Inheritance between classes.
+
+const Person = function (firstname, birthyear) {
+  this.firstname = firstname;
+  this.birthyear = birthyear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2023 - this.birthyear);
+};
+
+const john = new Person('John Ibiyomi', 1982);
+
+console.log(john);
+john.calcAge();
+
+const Pastor = function (firstname, birthyear, church) {
+  Person.call(this, firstname, birthyear);
+  this.church = church;
+};
+
+Pastor.prototype = Object.create(Person.prototype);
+
+Pastor.prototype.greet = function () {
+  console.log(
+    `Pastor ${this.firstname} say's hello from the ${this.church} ministries.`
+  );
+};
+
+const david = new Pastor('David Oyedele', 1985, 'G.I.C');
+
+console.dir(david);
+console.dir(john);
+david.greet();
+david.calcAge();
+console.log(david instanceof Pastor);
+console.log(david instanceof Person);
+console.log(david instanceof Object);
+
+const Heads = function (firstname, birthyear, church, zone) {
+  Pastor.call(this, firstname, birthyear, church);
+  this.zone = zone;
+};
+
+Heads.prototype = Object.create(Pastor.prototype);
+
+Heads.prototype.founders = function () {
+  console.log(
+    `${this.firstname} is a founding father of ${this.church} ministries`
+  );
+};
+
+const adedayo = new Heads('Adedayo Okiki', 1985, 'G.I.C', 'Headquaters');
+
+Heads.prototype.constructor = Heads;
+
+console.log(adedayo);
+adedayo.greet();
+
+console.dir(adedayo.__proto__);
