@@ -557,61 +557,94 @@ GOOD LUCK 😀
 
 //Inheritance between classes.
 
-const Person = function (firstname, birthyear) {
-  this.firstname = firstname;
-  this.birthyear = birthyear;
-};
+// const Person = function (firstname, birthyear) {
+//   this.firstname = firstname;
+//   this.birthyear = birthyear;
+// };
 
-Person.prototype.calcAge = function () {
-  console.log(2023 - this.birthyear);
-};
+// Person.prototype.calcAge = function () {
+//   console.log(2023 - this.birthyear);
+// };
 
-const john = new Person('John Ibiyomi', 1982);
+// const john = new Person('John Ibiyomi', 1982);
 
-console.log(john);
-john.calcAge();
+// console.log(john);
+// john.calcAge();
 
-const Pastor = function (firstname, birthyear, church) {
-  Person.call(this, firstname, birthyear);
-  this.church = church;
-};
+// const Pastor = function (firstname, birthyear, church) {
+//   Person.call(this, firstname, birthyear);
+//   this.church = church;
+// };
 
-Pastor.prototype = Object.create(Person.prototype);
+// Pastor.prototype = Object.create(Person.prototype);
 
-Pastor.prototype.greet = function () {
-  console.log(
-    `Pastor ${this.firstname} say's hello from the ${this.church} ministries.`
-  );
-};
+// Pastor.prototype.greet = function () {
+//   console.log(
+//     `Pastor ${this.firstname} say's hello from the ${this.church} ministries.`
+//   );
+// };
 
-const david = new Pastor('David Oyedele', 1985, 'G.I.C');
+// const david = new Pastor('David Oyedele', 1985, 'G.I.C');
 
-console.dir(david);
-console.dir(john);
-david.greet();
-david.calcAge();
-console.log(david instanceof Pastor);
-console.log(david instanceof Person);
-console.log(david instanceof Object);
+// console.dir(david);
+// console.dir(john);
+// david.greet();
+// david.calcAge();
+// console.log(david instanceof Pastor);
+// console.log(david instanceof Person);
+// console.log(david instanceof Object);
 
-const Heads = function (firstname, birthyear, church, zone) {
-  Pastor.call(this, firstname, birthyear, church);
-  this.zone = zone;
-};
+// const Heads = function (firstname, birthyear, church, zone) {
+//   Pastor.call(this, firstname, birthyear, church);
+//   this.zone = zone;
+// };
 
-Heads.prototype = Object.create(Pastor.prototype);
+// Heads.prototype = Object.create(Pastor.prototype);
 
-Heads.prototype.founders = function () {
-  console.log(
-    `${this.firstname} is a founding father of ${this.church} ministries`
-  );
-};
+// Heads.prototype.founders = function () {
+//   console.log(
+//     `${this.firstname} is a founding father of ${this.church} ministries`
+//   );
+// };
 
-const adedayo = new Heads('Adedayo Okiki', 1985, 'G.I.C', 'Headquaters');
+// const adedayo = new Heads('Adedayo Okiki', 1985, 'G.I.C', 'Headquaters');
 
-Heads.prototype.constructor = Heads;
+// Heads.prototype.constructor = Heads;
 
-console.log(adedayo);
-adedayo.greet();
+// console.log(adedayo);
+// adedayo.greet();
 
-console.dir(adedayo.__proto__);
+// console.dir(adedayo.__proto__);
+
+// const Person = class {
+//   constructor(name, address, year) {
+//     this.name = name;
+//     this.address = address;
+//     this.year = year;
+//   }
+
+//   calcage() {
+//     return 2023 - this.year;
+//   }
+// };
+// const segun = new Person('Segun', 'London Uk', 1990);
+
+// class Student extends Person {
+//   constructor(name, address, year, course) {
+//     super(name, address, year);
+//     this.course = course;
+//   }
+
+//   introduce() {
+//     return `My name is ${this.name} and i study ${this.course}`;
+//   }
+// }
+
+// const mary = new Student('Mary ogbolu', 'lagos nig', 1995, 'human resourses');
+// console.log(mary);
+// mary.introduce();
+
+// document.querySelector('body').addEventListener('keypress', function (e) {
+//   if (e.keyCode === +'13')
+//     document.querySelector('h1').textContent = `${mary.introduce()}`;
+// });
